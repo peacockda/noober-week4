@@ -11,7 +11,7 @@ async function pageLoaded() {
   // printLeg() extracts data for one passed passenger and injects a
   // "ride box" for that rider and any additional passengers.
   function printLeg(passenger) {
-    // Code block borrowed from hw3
+    // Code block borrowed from hw3. This could be simplified by skipping variable assignments
     passengerName = `${passenger.passengerDetails.first} ${passenger.passengerDetails.last}`
     passengerPhone = `${passenger.passengerDetails.phoneNumber}`
     passengerNumberOfPassengers = passenger.numberOfPassengers
@@ -97,9 +97,6 @@ async function pageLoaded() {
           <span>Noober X</span>
         </h1>
       `)
-    // } else {
-    //   // Extra error-handling else for testing.
-    //   console.log(`Error! Service level not defined for Ride ${ride}`)
     }
   }
 
@@ -116,11 +113,10 @@ async function pageLoaded() {
     } else {
       levelOfService = 'X'
     }
-    // Print appropriate level of service and ride
+    // Print appropriate level of service header, then print the ride
     printLevelOfService(levelOfService)
     printRide(ride)
   }
 }
 
 window.addEventListener('DOMContentLoaded', pageLoaded)
-
