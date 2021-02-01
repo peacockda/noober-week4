@@ -6,10 +6,10 @@ async function pageLoaded() {
   // console.dir(json)
   
   // 🔥 start here: write code to loop through the rides
-  let outputElement = document.querySelector('.ridesContainer')
+  let outputElement = document.querySelector('.rides')
   
   // printLeg() extracts data for one passed passenger and injects a
-  // "ride box" for that rider and their passengers, if any.
+  // "ride box" for that rider and any additional passengers.
   function printLeg(passenger) {
     // Code block borrowed from hw3
     passengerName = `${passenger.passengerDetails.first} ${passenger.passengerDetails.last}`
@@ -66,6 +66,8 @@ async function pageLoaded() {
     }
   }
 
+  // printLevelOfService() prints an approriate service level header
+  // based on the passed string
   function printLevelOfService(serviceLevel) {
     if (serviceLevel == 'Pool') {
       outputElement.insertAdjacentHTML('beforeend', ` 
@@ -95,8 +97,9 @@ async function pageLoaded() {
           <span>Noober X</span>
         </h1>
       `)
-    } else {
-      console.log(`Error! Service level not defined for Ride ${ride}`)
+    // } else {
+    //   // Extra error-handling else for testing.
+    //   console.log(`Error! Service level not defined for Ride ${ride}`)
     }
   }
 
