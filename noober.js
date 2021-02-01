@@ -11,20 +11,21 @@ async function pageLoaded() {
   // printLeg() extracts data for one passed passenger and injects a
   // "ride box" for that rider and any additional passengers.
   function printLeg(passenger) {
-    // Code block borrowed from hw3. This could be simplified by skipping variable assignments
+    // Code block adapted from hw3. Could this be simplified by skipping variable assignments?
+    // Shortened, yes, but would be less useable.
     passengerName = `${passenger.passengerDetails.first} ${passenger.passengerDetails.last}`
     passengerPhone = `${passenger.passengerDetails.phoneNumber}`
-    passengerNumberOfPassengers = passenger.numberOfPassengers
+    // passengerNumberOfPassengers = passenger.numberOfPassengers
     passengerPickupAddressLine1 = passenger.pickupLocation.address
     passengerPickupAddressLine2 = `${passenger.pickupLocation.city}, ${passenger.pickupLocation.state} ${passenger.pickupLocation.zip}`
     passengerDropoffAddressLine1 = passenger.dropoffLocation.address
     passengerDropoffAddressLine2 = `${passenger.dropoffLocation.city}, ${passenger.dropoffLocation.state} ${passenger.dropoffLocation.zip}`
     
     // Enhancement for grammar
-    if (passengerNumberOfPassengers == 1){
+    if (passenger.numberOfPassengers == 1){
       numPassengers = '1 passenger'
     } else {
-      numPassengers = `${passengerNumberOfPassengers} passengers`
+      numPassengers = `${passenger.numberOfPassengers} passengers`
       // console.log(`Multiple passengers for ${passengerName}`)
     }
 
