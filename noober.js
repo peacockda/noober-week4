@@ -70,35 +70,12 @@ async function pageLoaded() {
   // printLevelOfService() prints an approriate service level header
   // based on the passed string
   function printLevelOfService(serviceLevel) {
-    if (serviceLevel == 'Pool') {
-      outputElement.insertAdjacentHTML('beforeend', ` 
-        <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          <i class="fas fa-car-side"></i>
-          <span>Noober Pool</span>
-        </h1>
-      `)
-    } else if (serviceLevel == 'Purple') {
-      outputElement.insertAdjacentHTML('beforeend', ` 
+    outputElement.insertAdjacentHTML('beforeend', ` 
       <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
         <i class="fas fa-car-side"></i>
-        <span>Noober Purple</span>
+        <span>Noober ${serviceLevel}</span>
       </h1>
-      `)
-    } else if (serviceLevel == 'XL') {
-      outputElement.insertAdjacentHTML('beforeend', ` 
-        <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          <i class="fas fa-car-side"></i>
-          <span>Noober XL</span>
-        </h1>
-      `)
-    } else if (serviceLevel = 'X') {
-      outputElement.insertAdjacentHTML('beforeend', ` 
-        <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-          <i class="fas fa-car-side"></i>
-          <span>Noober X</span>
-        </h1>
-      `)
-    }
+    `)
   }
 
   // Determine level of service before writing anything
